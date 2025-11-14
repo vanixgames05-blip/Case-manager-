@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Mir's Law Case Management System",
+  "description": "A comprehensive case management application for Pakistani lawyers. It allows advocates to add, view, edit, and manage their cases with features like a calendar-based view, AI-powered case-stage prediction, and legal drafting tools.",
+  "requestFramePermissions": []
+}

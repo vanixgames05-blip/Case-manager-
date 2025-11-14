@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mir's Law Case Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1a237e', // Dark Indigo
+              secondary: '#c5cae9', // Light Indigo
+              accent: '#b71c1c', // Dark Red
+              background: '#f1f5f9', // Slate 100
+              surface: '#ffffff',
+              textPrimary: '#1f2937', // Gray 800
+              textSecondary: '#4b5563', // Gray 600
+            },
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "uuid": "https://aistudiocdn.com/uuid@^9.0.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^18.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1",
+    "react/": "https://aistudiocdn.com/react@^18.2.0/",
+    "react": "https://aistudiocdn.com/react@^18.2.0",
+    "file-saver": "https://aistudiocdn.com/file-saver@^2.0.5",
+    "docx": "https://aistudiocdn.com/docx@^8.5.0",
+    "mammoth": "https://aistudiocdn.com/mammoth@^1.7.2",
+    "pdfjs-dist/build/pdf.min.mjs": "https://aistudiocdn.com/pdfjs-dist@^4.4.168/build/pdf.min.mjs",
+    "pdfjs-dist/": "https://aistudiocdn.com/pdfjs-dist@^5.4.394/",
+    "tesseract.js": "https://aistudiocdn.com/tesseract.js@^5.1.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-background">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
