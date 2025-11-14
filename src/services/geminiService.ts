@@ -1,6 +1,6 @@
 
 import { GoogleGenAI, GenerateContentResponse, Content } from "@google/genai";
-import { Case, CaseNature } from '../types';
+import { Case } from '../types';
 
 // FIX: Per coding guidelines, the API key must be sourced from process.env.API_KEY.
 const API_KEY = process.env.API_KEY;
@@ -59,7 +59,7 @@ Based on the provided case data, what is the single, most likely procedural stag
         contents: prompt
     });
 
-    return response.text.trim();
+    return response.text?.trim() ?? "Could not predict next stage.";
   } catch (error) {
     console.error("Error predicting next stage:", error);
     return "Could not predict next stage.";
@@ -85,7 +85,7 @@ export const generateDraft = async (request: string): Promise<string> => {
         contents: prompt,
     });
     
-    return response.text;
+    return response.text ?? "Could not generate draft. Please try again.";
   } catch (error) {
     console.error("Error generating draft:", error);
     return "Could not generate draft. Please try again.";
@@ -147,7 +147,7 @@ export async function* reviewDocumentStream(documentText: string): AsyncGenerato
     });
     
     for await (const chunk of responseStream) {
-        yield chunk.text;
+        yield chunk.text ?? '';
     }
 
   } catch (error) {
@@ -194,7 +194,7 @@ export async function* getSeniorCounselChatAdviceStream(chatHistory: Content[]):
         });
 
         for await (const chunk of responseStream) {
-            yield chunk.text;
+            yield chunk.text ?? '';
         }
 
     } catch (error) {

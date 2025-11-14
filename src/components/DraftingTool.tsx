@@ -182,7 +182,7 @@ const DraftingTool: React.FC = () => {
             for (let i = 1; i <= pdf.numPages; i++) {
                 const page = await pdf.getPage(i);
                 const text = await page.getTextContent();
-                textContent += text.items.map(item => 'str' in item ? item.str : '').join(' ') + '\n';
+                textContent += text.items.map((item: any) => 'str' in item ? item.str : '').join(' ') + '\n';
             }
 
             if (textContent.trim().length < 150 * pdf.numPages) {
